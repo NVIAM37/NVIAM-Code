@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#141414] text-white overflow-x-hidden;
+    background-image:
+      radial-gradient(
+        circle at 15% 50%,
+        rgba(0, 243, 255, 0.05) 0%,
+        transparent 25%
+      ),
+      radial-gradient(
+        circle at 85% 30%,
+        rgba(188, 19, 254, 0.05) 0%,
+        transparent 25%
+      );
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg;
+  }
+
+  .glass-card {
+    @apply bg-[#13131f]/80 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl;
+  }
+
+  .glass-strip {
+    @apply bg-white/5 backdrop-blur-md border-b border-white/10;
+  }
+
+  .neon-button {
+    @apply relative px-8 py-3 rounded-lg font-bold text-white transition-all duration-300 transform hover:scale-105;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .neon-button.variant-purple {
+    background: linear-gradient(135deg, #b721ff 0%, #21d4fd 100%);
+    box-shadow: 0 0 15px rgba(183, 33, 255, 0.4);
+  }
+
+  .neon-button:hover {
+    box-shadow: 0 0 25px rgba(0, 198, 255, 0.6);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  }
+
+  .input-glass {
+    @apply w-full bg-transparent border-b border-gray-700 text-white placeholder-gray-500 py-3 px-2 focus:outline-none focus:border-[#00f3ff] transition-all;
+  }
+}
+
+.message-box {
+  scroll-behavior: smooth;
+}
+
+.message-box::-webkit-scrollbar {
+  display: none;
+}
+
+/* React Split Gutter Styles */
+.gutter {
+  background-color: #252526;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition: background-color 0.2s;
+}
+
+.gutter:hover {
+  background-color: #00f3ff;
+}
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+}
+
+.gutter.gutter-vertical {
+  cursor: row-resize;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABoV865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+}
