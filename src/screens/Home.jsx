@@ -14,18 +14,18 @@ const Home = () => {
 
     function createProject(e) {
         e.preventDefault()
-        console.log({ projectName })
+        // console.log({ projectName })
 
         axios.post('/projects/create', {
             name: projectName,
         })
             .then((res) => {
-                console.log(res)
+                // console.log(res)
                 setIsModalOpen(false)
                 setProject([...project, res.data])
             })
             .catch((error) => {
-                console.log(error)
+                console.error(error)
             })
     }
 
@@ -34,7 +34,7 @@ const Home = () => {
             setProject(res.data.projects)
 
         }).catch(err => {
-            console.log(err)
+            console.error(err)
         })
 
     }, [])

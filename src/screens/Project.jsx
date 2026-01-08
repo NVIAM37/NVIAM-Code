@@ -87,7 +87,7 @@ const Project = () => {
                     const py = await window.loadPyodide();
                     setPyodide(py);
                     pyodideReady.current = true;
-                    console.log("Pyodide Ready");
+                    // console.log("Pyodide Ready");
                 } catch (e) {
                     console.error("Pyodide Load Error", e);
                 }
@@ -157,12 +157,12 @@ const Project = () => {
         const socket = initializeSocket(String(project._id));
 
         socket.on('connect', () => {
-             console.log("Socket connected (Idle Mode)");
+             // console.log("Socket connected (Idle Mode)");
              setIsSocketConnected(true);
         });
 
         socket.on('disconnect', () => {
-             console.log("Socket disconnected");
+             // console.log("Socket disconnected");
              setIsSocketConnected(false);
              setIsCollaborating(false);
              setRoomId(null);
@@ -171,19 +171,19 @@ const Project = () => {
 
         // 1. Room Events
         socket.on('room-created', ({ roomId }) => {
-            console.log("Room Created:", roomId);
+            // console.log("Room Created:", roomId);
             setRoomId(roomId);
             setIsCollaborating(true);
         });
 
         socket.on('room-joined', ({ roomId }) => {
-            console.log("Room Joined:", roomId);
+            // console.log("Room Joined:", roomId);
             setRoomId(roomId);
             setIsCollaborating(true);
         });
 
         socket.on('room-users', (users) => {
-            console.log("Room Users Updated:", users);
+            // console.log("Room Users Updated:", users);
             setRoomUsers(users);
         });
 
@@ -799,7 +799,16 @@ const Project = () => {
                                     </div>
                                  </div>
                              )}
+
                         </div>
+                        
+                        {/* Mobile Footer: Back Button */}
+                        <div className="p-4 border-t border-white/5 bg-[#1e1e1e]">
+                             <button onClick={() => navigate('/')} className="w-full py-3 bg-gray-800 hover:bg-white/10 text-gray-400 hover:text-white border border-white/5 hover:border-white/20 rounded-xl text-xs font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2">
+                                <i className="ri-arrow-left-line text-lg"></i> Back to Dashboard
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             )}

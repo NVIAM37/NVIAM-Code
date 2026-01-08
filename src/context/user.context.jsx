@@ -35,7 +35,7 @@ export const UserProvider = ({ children }) => {
                 setLoading(false);
             })
             .catch((err) => {
-                console.log("Session restore failed:", err);
+                console.error("Session restore failed:", err);
                 setUser(null);
                 setLoading(false);
                 // Explicitly clear stale token if session is invalid

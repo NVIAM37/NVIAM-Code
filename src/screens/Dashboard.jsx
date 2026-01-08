@@ -55,7 +55,7 @@ const Dashboard = () => {
             });
             setProjects(userProjects)
         }).catch(err => {
-            console.log(err)
+            console.error(err)
         })
     }, [user._id])
 
@@ -67,7 +67,7 @@ const Dashboard = () => {
                 setProjects([...projects, res.data])
                 setProjectName('')
             })
-            .catch((error) => console.log(error))
+            .catch((error) => console.error(error))
     }
 
     function joinProject(e) {
