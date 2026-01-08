@@ -9,7 +9,7 @@ import Split from 'react-split'
 import prettier from "prettier/standalone";
 import parserBabel from "prettier/plugins/babel";
 import * as parserEstree from "prettier/plugins/estree";
-import { getWebContainer } from '../config/webcontainer'
+import { getWebContainer } from '../config/webContainer'
 import { generatePreviewHtml } from '../utils/previewUtil'
 import { notify } from '../utils/notifications'
 
