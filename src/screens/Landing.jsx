@@ -45,9 +45,9 @@ const Landing = () => {
     }
 
     const features = [
-        { icon: 'ri-rocket-2-line', text: 'Instant Deploy', sub: 'Production ready in seconds' },
+        { icon: 'ri-code-box-line', text: 'Instant Runtime', sub: 'Run JS & Python code instantly' },
         { icon: 'ri-robot-2-line', text: 'AI Assistant', sub: 'Smart code completion & fixes' },
-        { icon: 'ri-group-line', text: 'Live Collaboration', sub: 'Code together in real-time' }
+        { icon: 'ri-group-line', text: 'Real-time Collab', sub: 'Code together with your team' }
     ]
 
     return (
@@ -67,13 +67,13 @@ const Landing = () => {
                 >
                     <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600 block mb-2">NVIAM CODE</span>
-                        Code into the <br />
+                        Collaborate in <br />
                         <span className="text-white">
-                            Future
+                            Real-Time
                         </span>.
                     </h1>
                     <p className="text-lg md:text-xl text-gray-300 font-light max-w-lg mx-auto md:mx-0">
-                        The advanced IDE for modern engineers. Experience the next evolution of coding.
+                        A lightweight, collaborative IDE for running JavaScript and Python directly in your browser.
                     </p>
 
                     <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mt-8">
